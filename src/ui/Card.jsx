@@ -7,8 +7,8 @@ const Card = ({id,title, completed}) => {
   const handleCheckboxclick= () =>{
       dispatch(toggleComplete({id: id, completed: !completed}))
   }
-  const handledelete= () =>{
-    dispatch(deleteTodo({id: id}))
+  const handleDelete= () =>{
+    dispatch(deleteTodo({id:id}))
   }
   return (
    <li className={`undone`}>
@@ -23,7 +23,7 @@ const Card = ({id,title, completed}) => {
           </input>
           {title}
         </span>
-        <button className='btn btn__red' onClick={handledelete}>Delete</button>
+        <button className='btn btn__red' onClick={handleDelete}>Delete</button>
         </div>
    </li>
   )

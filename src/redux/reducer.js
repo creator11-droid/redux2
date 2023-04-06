@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 
 
@@ -11,7 +11,7 @@ const addToDoSlice= createSlice({
         addTodos: (state, action) => {
 const newTodo= {
     id:Date.now(),
-    description: action.payload.title,
+    title: action.payload.title,
     completed:false,
 }
 state.push(newTodo);
@@ -23,7 +23,7 @@ state.push(newTodo);
                 state[index].completed= action.payload.completed
         },
         deleteTodo: (state,action)=>{
-           return state.filter((todo)=>todo.id ===action.payload.id)
+           return state.filter((todo)=>todo.id !== action.payload.id)
         }
     }
 })
